@@ -19,38 +19,155 @@
 	Led Control Web APP
 </h1>
 
-<select name="panelnumber" align="left">
+
+<select name="panelnumber" align="left" style="margin-left: 20%">
 	<option selected value="0"> Choose the number of panels </option>
-   <option value="1">1</option> 
-   <option value="2">2</option> 
-   <option value="3">3</option>
-   <option value="4">4</option> 
-   <option value="5">5</option> 
-   <option value="6">6</option> 
-   <option value="7">7</option> 
-   <option value="8">8</option> 
-   <option value="9">9</option>
-   <option value="10">10</option>  
+ <div style="margin-left:40%;">
+   <option value="1" onClick="showMatrix('1')">1</option> 
+   <option value="2" onClick="showMatrix('2')">2</option> 
+   <option value="3" onClick="showMatrix('3')">3</option>
+   <option value="4" onClick="showMatrix('4')">4</option> 
+   <option value="5" onClick="showMatrix('5')">5</option> 
+   <option value="6" onClick="showMatrix('6')">6</option> 
+   <option value="7" onClick="showMatrix('7')">7</option> 
+   <option value="8" onClick="showMatrix('8')">8</option> 
+   <option value="9" onClick="showMatrix('9')">9</option>
+   <option value="10" onClick="showMatrix('10')">10</option>  
+ <div>
 </select>
 
-<section class="uploader" align="right">
+	
+<section class="uploader" align="right" >
 
-<form action="demo_form.asp">
+<form action="demo_form.asp" style="margin-left: 40%; margin-top: -20px;">
   <input type="file" id="files" name="files[]" multiple />
   <output id="list"></output>
-  <input type="submit">
+  <input type="submit" style="margin-left: 30px;">
 </form>
-<style>
-  .thumb {
-    height: 32px;
-    border: 1px solid #000;
-    margin: px 5px 0 0;
-  }
-</style>
-<script>
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
-</script>
 
+<script type="text/javascript">
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+	function showMatrix(nr){
+
+		switch(nr) {
+    case '1':
+		vanishPanels();
+        document.getElementById("panel1").style.display = "block";
+        break;
+    case '2':
+		vanishPanels();
+		document.getElementById("panel1").style.display = "block";
+        document.getElementById("panel2").style.display = "block";
+        break;
+	case '3':
+		vanishPanels();
+        document.getElementById("panel1").style.display = "block";
+        document.getElementById("panel2").style.display = "block";
+        document.getElementById("panel3").style.display = "block";
+        break;
+	case '4':
+		vanishPanels();
+		document.getElementById("panel1").style.display = "block";
+        document.getElementById("panel2").style.display = "block";
+        document.getElementById("panel3").style.display = "block";
+        document.getElementById("panel4").style.display = "block";
+        break;
+	case '5':
+		vanishPanels();
+		document.getElementById("panel1").style.display = "block";
+        document.getElementById("panel2").style.display = "block";
+        document.getElementById("panel3").style.display = "block";
+        document.getElementById("panel4").style.display = "block";
+        document.getElementById("panel5").style.display = "block";
+        break;
+	case '6':
+		vanishPanels();
+		document.getElementById("panel1").style.display = "block";
+        document.getElementById("panel2").style.display = "block";
+        document.getElementById("panel3").style.display = "block";
+        document.getElementById("panel4").style.display = "block";
+        document.getElementById("panel5").style.display = "block";
+        document.getElementById("panel6").style.display = "block";
+        break;
+	case '7':
+		vanishPanels();
+		document.getElementById("panel1").style.display = "block";
+        document.getElementById("panel2").style.display = "block";
+        document.getElementById("panel3").style.display = "block";
+        document.getElementById("panel4").style.display = "block";
+        document.getElementById("panel5").style.display = "block";
+        document.getElementById("panel6").style.display = "block";
+        document.getElementById("panel7").style.display = "block";
+        break;
+	case '8':
+		vanishPanels();
+		document.getElementById("panel1").style.display = "block";
+        document.getElementById("panel2").style.display = "block";
+        document.getElementById("panel3").style.display = "block";
+        document.getElementById("panel4").style.display = "block";
+        document.getElementById("panel5").style.display = "block";
+        document.getElementById("panel6").style.display = "block";
+        document.getElementById("panel7").style.display = "block";
+        document.getElementById("panel8").style.display = "block";
+        break;
+	case '9':
+		vanishPanels();
+		document.getElementById("panel1").style.display = "block";
+        document.getElementById("panel2").style.display = "block";
+        document.getElementById("panel3").style.display = "block";
+        document.getElementById("panel4").style.display = "block";
+        document.getElementById("panel5").style.display = "block";
+        document.getElementById("panel6").style.display = "block";
+        document.getElementById("panel7").style.display = "block";
+        document.getElementById("panel8").style.display = "block";
+        document.getElementById("panel9").style.display = "block";
+        break;
+	case '10':
+		vanishPanels();
+		document.getElementById("panel1").style.display = "block";
+        document.getElementById("panel2").style.display = "block";
+        document.getElementById("panel3").style.display = "block";
+        document.getElementById("panel4").style.display = "block";
+        document.getElementById("panel5").style.display = "block";
+        document.getElementById("panel6").style.display = "block";
+        document.getElementById("panel7").style.display = "block";
+        document.getElementById("panel8").style.display = "block";
+        document.getElementById("panel9").style.display = "block";
+        document.getElementById("panel10").style.display = "block";
+        break;
+    default:
+        alert("Something went wrong!")
+} 
+	}
+	function vanishPanels(){
+		document.getElementById("panel1").style.display = "none";
+        document.getElementById("panel2").style.display = "none";
+        document.getElementById("panel3").style.display = "none";
+        document.getElementById("panel4").style.display = "none";
+        document.getElementById("panel5").style.display = "none";
+        document.getElementById("panel6").style.display = "none";
+        document.getElementById("panel7").style.display = "none";
+        document.getElementById("panel8").style.display = "none";
+        document.getElementById("panel9").style.display = "none";
+        document.getElementById("panel10").style.display = "none";
+	}
+	</script>
+
+
+	<div id="panel1" class="panels" style="margin-left: 40px;">  </div>
+	<div id="panel2" class="panels">  </div>
+	<div id="panel3" class="panels">  </div>
+	<div id="panel4" class="panels">  </div>
+	<div id="panel5" class="panels">  </div>
+	<div id="panel6" class="panels">  </div>
+	<div id="panel7" class="panels">  </div>
+	<div id="panel8" class="panels">  </div>
+	<div id="panel9" class="panels">  </div>
+	<div id="panel10" class="panels">  </div>
+	
+
+	
 
 </body>
 </html>

@@ -13,3 +13,13 @@ img {
 h1 {
     text-align: center;
 }
+.panels {
+	width: 96px;
+	height: 96px;
+	margin-top: 15%;
+	float: left;
+	border-width: 3px;
+	border-style: solid;
+	display: none;
+	
+}
