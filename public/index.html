@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Led Control Web App</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="/public/js/script.js"></script>
+</head>
+
+<!DOCTYPE html>
+	<html>
+<body>
+
+<h1 align="center">
+	Led Control Web APP
+</h1>
+
+<select name="panelnumber" align="left">
+	<option selected value="0"> Choose the number of panels </option>
+   <option value="1">1</option> 
+   <option value="2">2</option> 
+   <option value="3">3</option>
+   <option value="4">4</option> 
+   <option value="5">5</option> 
+   <option value="6">6</option> 
+   <option value="7">7</option> 
+   <option value="8">8</option> 
+   <option value="9">9</option>
+   <option value="10">10</option>  
+</select>
+
+<section class="uploader" align="right">
+
+<form action="demo_form.asp">
+  <input type="file" id="files" name="files[]" multiple />
+  <output id="list"></output>
+  <input type="submit">
+</form>
+<style>
+  .thumb {
+    height: 32px;
+    border: 1px solid #000;
+    margin: px 5px 0 0;
+  }
+</style>
+<script>
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+</script>
+
+
+</body>
+</html>

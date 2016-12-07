@@ -1,0 +1,15 @@
+div#wrapper {
+    margin: auto;
+    width: 50%;
+    max-width: 750px;
+    min-height: 500px;
+    background: cyan;
+    padding: 10px;
+}
+
+img {
+    height: 100px;
+}
+h1 {
+    text-align: center;
+}

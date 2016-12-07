@@ -1,0 +1,78 @@
+/*
+Wunderbar wichtige JS-Datei -> mir ist auf die Schnelle nix anderes eingefallen (JavaScript-Overflow)....
+ */
+
+function changeStyle() {
+    "use strict";
+
+    document.getElementById('wrapper').style.backgroundColor = "yellow";
+    document.getElementsByTagName('p')[0].style.lineHeight = "2em";
+    document.getElementsByTagName('h1')[0].style.color = "red";
+
+}
+
+function getAllLinks() {
+    ajaxObj = new XMLHttpRequest();
+    ajaxObj.onreadystatechange = function () {
+        if(ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+            document.getElementById('ausgabe').innerHTML = ajaxObj.response;
+        }
+    };
+
+    ajaxObj.open("GET", "/links", true);
+    ajaxObj.send();
+}
+
+function getLinkWidthID() {
+    ajaxObj = new XMLHttpRequest();
+    ajaxObj.onreadystatechange = function () {
+        if(ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+            document.getElementById('ausgabe').innerHTML = ajaxObj.response;
+        }
+    };
+
+    id = document.getElementById('linkid').value;
+    ajaxObj.open("GET", "/link/" + id, true);
+    ajaxObj.send();
+}
+
+function putLinkWidthID() {
+    ajaxObj = new XMLHttpRequest();
+    ajaxObj.onreadystatechange = function () {
+        if(ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+            document.getElementById('ausgabe').innerHTML = ajaxObj.response;
+        }
+    };
+
+    url = document.getElementById('linkurl').value;
+    id = document.getElementById('linkid').value;
+
+    ajaxObj.open("PUT", "/link/" + id +"/"+ url, true);
+    ajaxObj.send(encodeURI('url=' + url));
+}
+
+function deleteLinkWidthID() {
+    ajaxObj = new XMLHttpRequest();
+    ajaxObj.onreadystatechange = function () {
+        if(ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+            document.getElementById('ausgabe').innerHTML = ajaxObj.response;
+        }
+    };
+
+    id = document.getElementById('linkid').value;
+    ajaxObj.open("DELETE", "/link/" + id, true);
+    ajaxObj.send();
+}
+
+function postLink() {
+    ajaxObj = new XMLHttpRequest();
+    ajaxObj.onreadystatechange = function () {
+        if(ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+            document.getElementById('ausgabe').innerHTML = ajaxObj.response;
+        }
+    };
+
+    url = document.getElementById('linkurl').value;
+    ajaxObj.open("POST", "/links", true);
+    ajaxObj.send(encodeURI('url=' + url));
+}
