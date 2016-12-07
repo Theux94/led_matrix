@@ -1,7 +1,6 @@
 "use strict";
 
 var http = require("http");
-var rj = require("./../helper/readjson");
 var mw = require("./../helper/middleware");
 
 class ITMApp {
@@ -12,9 +11,6 @@ class ITMApp {
 	var entryPath = this.entryPath;
 	var server = http.createServer(function(req, res) {
 	    console.log(req.url);
-	    if(req.url == "/" || req.url == "") {
-		req.url = "/public";
-	    }
 
 	    var mwModules = [ [mw.logger,"/"], [mw.readingdata,"/"],[mw.readingcookie,"/"],[mw.publicfolder,'/public'],[mw.routing,"/"]]
 	    var sequence = Promise.resolve()

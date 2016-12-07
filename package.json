@@ -1,0 +1,22 @@
+{
+  "name": "led_matrix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theux94/led_matrix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Theux94/led_matrix/issues"
+  },
+  "homepage": "https://github.com/Theux94/led_matrix#readme",
+  "dependencies": {
+    "sqlite3": "^3.1.8"
+  }
+}

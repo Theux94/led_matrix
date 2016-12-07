@@ -2,9 +2,9 @@ var filereader = require("./filereader");
 var url = require("url");
 var qs = require("querystring");
 var router = require("./router");
-var links = require("../controller/links");
 var loginfile = require("../controller/login");
 var login = new loginfile.Login;
+
 
 
 function logger(req,res) {
@@ -67,8 +67,8 @@ function publicfolder(req, res) {
         function(resolve, reject) {
             urlString = url.parse(req.url, true);
 
-            if(urlString.pathname == "/public" || urlString.pathname == "/public/") {
-                urlString.pathname = "/public/welcome.html";
+            if(urlString.pathname == "/public" || urlString.pathname == "/public/" ) {
+                urlString.pathname = "/public/login.html";
             }
 
             console.log("Reading public folder: " + appRoot + urlString.pathname);
@@ -99,39 +99,22 @@ function routing(req, res) {
 
             var routes = {
                 GET: {
-                    '/links': function(req, res){
-                        links.getLinks(req, res)
-                    },
-                    '/link/:id': function(req, res, id){
-                        links.getLinkWithID(req, res, id);
-                    },
-		    '/validate/:token' : function(req, res, token){
-			login.validate(req,res,token);
-		    },
-		    '/logout' : function(req,res){
-			login.logout(req,res);
+		    '/principal':function(req,res){
+			req.url = "/public/index.html";
+			publicfolder(req,res);
 		    }
-                },
+                 
+		  },
                 DELETE: {
-                    '/link/:id': function(req, res, id){
-                        links.deleteLinkWithID(res, res, id);
-                    }
+                   
                 },
                 POST: {
-                    '/links': function(req, res){
-                        links.insertNewLink(req, res);
-                    },
-		    '/login': function(req,res){
+                 '/principal':function(req,res){
 			login.checkData(req,res);
-                    },
-		    '/signup': function(req, res){
-			login.register(req,res);
-		    }
+		 }
 		},
                 PUT: {
-                    '/link/:id/:url': function(req, res, id,url){
-                        links.updateLinkWithID(req, res, id,url);
-                    }
+                   
                 }
             };
 
