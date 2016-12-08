@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
   //document.getElementById('files').addEventListener('change', handleFileSelect, false);
+=======
+
+>>>>>>> 3f1a084acb90492040745a3684131151e504a71d
 
 	function showMatrix(nr){
 
