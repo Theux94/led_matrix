@@ -1,5 +1,5 @@
 
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+  //document.getElementById('files').addEventListener('change', handleFileSelect, false);
 
 	function showMatrix(nr){
 

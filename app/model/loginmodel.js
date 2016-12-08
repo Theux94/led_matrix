@@ -16,7 +16,8 @@ function checklogin(req,res,user,passw){
 	    }
 	    else{
 		res.writeHead(301,
-			      {Location: 'http://127.0.0.1:1337/principal'}
+			      {Location: 'http://127.0.0.1:1337/principal',
+			       'Set-Cookie': 'sesioncookie='+ user}
 );
 		res.end();
 		
