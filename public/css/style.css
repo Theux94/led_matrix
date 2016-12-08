@@ -14,8 +14,8 @@ h1 {
     text-align: center;
 }
 .panels {
-	width: 96px;
-	height: 96px;
+	width: 0px;
+	height: 0px;
 	margin-top: 15%;
 	float: left;
 	border-width: 3px;
@@ -23,3 +23,9 @@ h1 {
 	display: none;
 	
 }
+#imageMove {
+
+  position: absolute;
+
+}
+

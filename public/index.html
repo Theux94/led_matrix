@@ -39,6 +39,7 @@
  <div>
 </select>
 
+
 	
 <section class="uploader" align="right" >
 
@@ -47,8 +48,50 @@
   <output id="list"></output>
   <input type="submit" style="margin-left: 30px;">
 </form>
-<img id="blah" src="#" alt="your image" style="margin-left: 62%" />
 
+<div id="imageMove">
+	<img id="blah" src="#" alt="" />
+</div>
+
+
+
+	<script type="application/javascript">
+	
+var dog = document.getElementById("imageMove");
+var cat = document.getElementById("catPic");
+var moving = false;
+
+dog.addEventListener("mousedown", initialClick, false);
+cat.addEventListener("mousedown", initialClick, false);
+
+
+function move(e){
+
+  var newX = e.clientX - 10;
+  var newY = e.clientY - 10;
+
+  image.style.left = newX + "px";
+  image.style.top = newY + "px";
+
+  
+}
+
+function initialClick(e) {
+
+  if(moving){
+    document.removeEventListener("mousemove", move);
+    moving = !moving;
+    return;
+  }
+  
+  moving = !moving;
+  image = this;
+
+  document.addEventListener("mousemove", move, false);
+
+}
+	</script>
+	
 	<script> 
 	function readURL(input) {
         if (input.files && input.files[0]) {
