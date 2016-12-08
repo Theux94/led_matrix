@@ -12,7 +12,7 @@ class ITMApp {
 	var server = http.createServer(function(req, res) {
 	    console.log(req.url);
 
-	    var mwModules = [ [mw.logger,"/"], [mw.readingdata,"/"],[mw.readingcookie,"/"],[mw.publicfolder,'/public'],[mw.routing,"/"]]
+	    var mwModules = [ [mw.logger,"/"], [mw.readingdata,"/"],[mw.publicfolder,'/public'],[mw.routing,"/"]]
 	    var sequence = Promise.resolve()
 	    console.log("****DEBUG AUSGABE");
 

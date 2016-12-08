@@ -24,17 +24,22 @@ function readingcookie(req, res) {
 		var scookie = cookie.split(";");
 		scookie.forEach( function(cookie){
 		    var splitCookie = cookie.split("=");
-		    
 		    if (splitCookie[0] == "sesioncookie"){
 			req.sesioncookie = splitCookie[1];
 			console.log(req.sesioncookie);
+			req.url = "/public/index.html";
+		    }
+		    else{
+			req.url = "/public/login.html";
 		    }
 		   
 		});
 		resolve("COOKIE ");
             }
-	    else 
+	    else {
+		req.url = "/public/login.html";
 		resolve("COOKIE");
+	    }
 	});
 }
 
@@ -99,11 +104,10 @@ function routing(req, res) {
 
             var routes = {
                 GET: {
-		    '/principal':function(req,res){
-			req.url = "/public/index.html";
-			publicfolder(req,res);
+		   '/principal':function(req,res){
+		       readingcookie(req, res);
+		       publicfolder(req,res);
 		    }
-                 
 		  },
                 DELETE: {
                    
