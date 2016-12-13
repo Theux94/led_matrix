@@ -7,7 +7,7 @@ workspace = {
     "height":96,
     "width":96,
     "image":{
-        "height":0, "width":0, "x":0, "y":0
+        "height":0, "width":0, "x":0, "y":0,"src":''
     }
 };
 
@@ -28,7 +28,6 @@ function positionimage(event, elem){
     xx = Math.round(xe/workspace.scale);
     yy = Math.round(ye/workspace.scale);
     console.log("Coordinates: "+xx+"/"+yy);
-    console.log(elem);
     
 }
 
@@ -36,14 +35,15 @@ function positionimage(event, elem){
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-
         reader.onload = function (e) {
             $('#blah')
                 .attr('src', e.target.result)
                 .width(96)
                 .height(96);
         };
-
+	reader.onloadend = function () {
+	    workspace.image.src  = reader.result;
+	}
         reader.readAsDataURL(input.files[0]);
     }
 }
