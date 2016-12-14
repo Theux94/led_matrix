@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -10,18 +6,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Led Control Web App</title>
-  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="/public/js/script.js"></script>
 </head>
-<script type="text/javascript" src="/public/js/panelView.js"></script>
-<!DOCTYPE html>
+<script type="text/javascript" src="js/panelView.js"></script>
+
 	<html>
 <body>
 
 <h1 align="center">
 	Led Control Web APP
 </h1>
-
+	
 
 <select name="panelnumber" align="left" style="margin-left: 20%">
 	<option selected value="0"> Choose the number of panels </option>
@@ -43,26 +39,24 @@
 	
 <section class="uploader" align="right" >
 
-<form action="demo_form.asp" style="margin-left: 40%; margin-top: -20px;">
+<form action="demo_form.asp" style="margin-left: 500px; margin-top: -20px;">
   <input type="file" id="files" onChange="readURL(this);" name="files[]" multiple />
   <output id="list"></output>
-  <input type="submit" style="margin-left: 30px;">
+  <input type="submit" style="">
 </form>
 
 <div id="imageMove">
-	<img id="blah" src="#" alt="" />
+	<img id="movingImage" src="#" alt=" " />
 </div>
 
 
 
 	<script type="application/javascript">
 	
-var dog = document.getElementById("imageMove");
-var cat = document.getElementById("catPic");
+var img = document.getElementById("imageMove");
 var moving = false;
 
-dog.addEventListener("mousedown", initialClick, false);
-cat.addEventListener("mousedown", initialClick, false);
+img.addEventListener("mousedown", initialClick, false);
 
 
 function move(e){
@@ -98,7 +92,7 @@ function initialClick(e) {
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                $('#blah')
+                $('#movingImage')
                     .attr('src', e.target.result)
                     .width(96)
                     .height(96);
@@ -106,8 +100,11 @@ function initialClick(e) {
 
             reader.readAsDataURL(input.files[0]);
         }
-	}</script>
+	}
+	
 
+	</script>
+<div id="panelWrapper">
 	<div id="panel1" class="panels" style="margin-left: 40px;">  </div>
 	<div id="panel2" class="panels">  </div>
 	<div id="panel3" class="panels">  </div>
@@ -118,6 +115,7 @@ function initialClick(e) {
 	<div id="panel8" class="panels">  </div>
 	<div id="panel9" class="panels">  </div>
 	<div id="panel10" class="panels">  </div>
+</div>
 	
 
 	
