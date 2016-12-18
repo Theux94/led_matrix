@@ -3,7 +3,7 @@
 
     
 workspace = {
-    "scale":1,
+    "scale":3,
     "height":96,
     "width":96,
     "image":{
@@ -25,10 +25,11 @@ function positionimage(event, elem){
     var y = event.clientY;     // Get the vertical coordinate
     xe = x - panelMarginLeft;
     ye = y - elem.offsetTop;
-    xx = Math.round(xe/workspace.scale);
-    yy = Math.round(ye/workspace.scale);
-    console.log("Coordinates: "+xx+"/"+yy);
-    
+    xx = Math.floor(xe/workspace.scale);
+    yy = Math.floor(ye/workspace.scale);
+	if(xx>320) xx=320;
+	if(yy==33) yy=32;
+    console.log("CoordinatesFinal: "+xx+"/"+yy);
 }
 
 

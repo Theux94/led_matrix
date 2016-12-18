@@ -16,10 +16,9 @@ h1 {
 .panels {
 	width: 0px;
 	height: 0px;
-	border-top-width: 3px;
-	border-top-style: solid;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
+
+	margin-top: 10%;
+
 	display: none;
 	
 }
@@ -29,9 +28,14 @@ h1 {
 
 }
 #panelWrapper{
-    margin-top: 10%;
     position: static;
     height:100px;
     width:1500px;
-    
+	margin: 0 auto;
+	margin-top:20%;
+    height: 96px;
+	width: 0px;
+	border-style: none;
+	border-width: 2px;
+
 }
