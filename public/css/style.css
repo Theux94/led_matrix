@@ -16,20 +16,19 @@ h1 {
 .panels {
 	width: 0px;
 	height: 0px;
-	margin-top: 15%;
-	border-top-width: 3px;
-	border-top-style: solid;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
 	display: none;
 	
 }
-#panelWrapper{
-	height:100px;
-	width:1500px;
-}
 #imageMove {
 
-  	position: absolute;
+  position: absolute;
 
+}
+#panelWrapper{
+	margin: 0 auto;
+	margin-top:20%;
+    height: 96px;
+	width: 0px;
+	border-style: none;
+	border-width: 2px;
 }
