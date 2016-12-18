@@ -6,7 +6,7 @@
 		 document.getElementById("panel1").style.borderleftWidth = "3px";
 		switch(nr) {
     case '1':
-		panelMarginLeft = "650"
+		panelMarginLeft = "65";
 		vanishPanels();
 		increaseSize('1');
         document.getElementById("panel1").style.display = "inline-block";

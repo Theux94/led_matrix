@@ -16,7 +16,6 @@ h1 {
 .panels {
 	width: 0px;
 	height: 0px;
-	margin-top: 10%;
 	border-top-width: 3px;
 	border-top-style: solid;
 	border-bottom-width: 3px;
@@ -30,7 +29,9 @@ h1 {
 
 }
 #panelWrapper{
+    margin-top: 10%;
     position: static;
     height:100px;
     width:1500px;
+    
 }

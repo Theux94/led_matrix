@@ -14,6 +14,25 @@
 <script type="text/javascript" src="/public/js/panelView.js"></script>
 <script type="text/javascript" src="/public/js/PictureHandler.js"></script>
 <script type="text/javascript" src="/public/js/store_params.js"></script>
+<script type="application/javascript">
+    function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+    var user = readCookie('sesioncookie');
+    var ws = new WebSocket('ws://127.0.0.1:1337/principal','access');
+    //ws.send(user.toString());
+    ws.onopen = function(){
+      console.log(user);
+      ws.send(user);          
+    }
+</script>
 <body>
 
 <h1 align="center">
