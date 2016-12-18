@@ -1,71 +1,139 @@
 
 	function showMatrix(nr){
 		var allPanelSizeX;
+<<<<<<< HEAD
+		var panelMarginLeft;
+		 document.getElementById("panel1").style.borderLeftStyle = "solid";
+		 document.getElementById("panel1").style.borderleftWidth = "3px";
+=======
 		document.getElementById("panelWrapper").style.borderStyle = "dotted";
+>>>>>>> refs/remotes/origin/master
 		switch(nr) {
     case '1':
+		panelMarginLeft = "650"
 		vanishPanels();
 		increaseSize('1');
         document.getElementById("panel1").style.display = "inline-block";
+<<<<<<< HEAD
+		document.getElementById("panel1").style.marginLeft = panelMarginLeft + "px";
+		 document.getElementById("panel1").style.borderRightStyle = "solid";
+		 document.getElementById("panel1").style.borderRightWidth = "3px";
+				
+=======
 		
 		document.getElementById("panelWrapper").style.width = "96px";
 		document.getElementById("panelWrapper").style.height = "100px";
+>>>>>>> refs/remotes/origin/master
 		allPanelSizeX = '96'
         break;
     case '2':
+		panelMarginLeft = "630"
 		vanishPanels();
 		increaseSize('2');
+<<<<<<< HEAD
+		document.getElementById("panel1").style.marginLeft = panelMarginLeft + "px";
+		document.getElementById("panel1").style.display = "inline-block";
+        document.getElementById("panel2").style.display = "inline-block";
+		 document.getElementById("panel2").style.borderRightStyle = "solid";
+		 document.getElementById("panel2").style.borderRightWidth = "3px";
+=======
 		document.getElementById("panel1").style.display = "inline-block";
         document.getElementById("panel2").style.display = "inline-block";
 		document.getElementById("panelWrapper").style.width = "196px";
+>>>>>>> refs/remotes/origin/master
 		allPanelSizeX = '192'
         break;
 				
 	case '3':
+		panelMarginLeft = "610"
 		vanishPanels();
 		increaseSize('3');
+<<<<<<< HEAD
+		document.getElementById("panel1").style.marginLeft = panelMarginLeft + "px";
+        document.getElementById("panel1").style.display = "inline-block";
+        document.getElementById("panel2").style.display = "inline-block";
+        document.getElementById("panel3").style.display = "inline-block";
+		 document.getElementById("panel3").style.borderRightStyle = "solid";
+		 document.getElementById("panel3").style.borderRightWidth = "3px";
+=======
         document.getElementById("panel1").style.display = "inline-block";
         document.getElementById("panel2").style.display = "inline-block";
         document.getElementById("panel3").style.display = "inline-block";
 		document.getElementById("panelWrapper").style.width = "296px";
+>>>>>>> refs/remotes/origin/master
 		allPanelSizeX = '288'
         break;
 	case '4':
+		panelMarginLeft = "560"
 		vanishPanels();
 		increaseSize('4');
+<<<<<<< HEAD
+		document.getElementById("panel1").style.marginLeft = panelMarginLeft + "px";
+=======
+>>>>>>> refs/remotes/origin/master
 		document.getElementById("panel1").style.display = "inline-block";
         document.getElementById("panel2").style.display = "inline-block";
         document.getElementById("panel3").style.display = "inline-block";
         document.getElementById("panel4").style.display = "inline-block";
+<<<<<<< HEAD
+		 document.getElementById("panel4").style.borderRightStyle = "solid";
+		 document.getElementById("panel4").style.borderRightWidth = "3px";
+=======
 		document.getElementById("panelWrapper").style.width = "396px";
+>>>>>>> refs/remotes/origin/master
 		allPanelSizeX = '384'
         break;
 	case '5':
+		panelMarginLeft = "500"
 		vanishPanels();
 		increaseSize('5');
+<<<<<<< HEAD
+		document.getElementById("panel1").style.marginLeft = panelMarginLeft + "px";
+=======
+>>>>>>> refs/remotes/origin/master
 		document.getElementById("panel1").style.display = "inline-block";
         document.getElementById("panel2").style.display = "inline-block";
         document.getElementById("panel3").style.display = "inline-block";
         document.getElementById("panel4").style.display = "inline-block";
         document.getElementById("panel5").style.display = "inline-block";
+<<<<<<< HEAD
+		 document.getElementById("panel5").style.borderRightStyle = "solid";
+		 document.getElementById("panel5").style.borderRightWidth = "3px";
+=======
 		document.getElementById("panelWrapper").style.width = "496px";
+>>>>>>> refs/remotes/origin/master
 		allPanelSizeX = '480'
         break;
 	case '6':
+		panelMarginLeft = "470"
 		vanishPanels();
 		increaseSize('6');
+<<<<<<< HEAD
+		document.getElementById("panel1").style.marginLeft = panelMarginLeft + "px";
+=======
+>>>>>>> refs/remotes/origin/master
 		document.getElementById("panel1").style.display = "inline-block";
         document.getElementById("panel2").style.display = "inline-block";
         document.getElementById("panel3").style.display = "inline-block";
         document.getElementById("panel4").style.display = "inline-block";
         document.getElementById("panel5").style.display = "inline-block";
         document.getElementById("panel6").style.display = "inline-block";
+<<<<<<< HEAD
+		 document.getElementById("panel6").style.borderRightStyle = "solid";
+		 document.getElementById("panel6").style.borderRightWidth = "3px";
+=======
 		document.getElementById("panelWrapper").style.width = "596px";
+>>>>>>> refs/remotes/origin/master
 		allPanelSizeX = '576'
         break;
 	case '7':
+		panelMarginLeft = "430"
 		vanishPanels();
 		increaseSize('7');
+<<<<<<< HEAD
+		document.getElementById("panel1").style.marginLeft = panelMarginLeft + "px";
+=======
+>>>>>>> refs/remotes/origin/master
 		document.getElementById("panel1").style.display = "inline-block";
         document.getElementById("panel2").style.display = "inline-block";
         document.getElementById("panel3").style.display = "inline-block";
@@ -73,12 +141,22 @@
         document.getElementById("panel5").style.display = "inline-block";
         document.getElementById("panel6").style.display = "inline-block";
         document.getElementById("panel7").style.display = "inline-block";
+<<<<<<< HEAD
+		 document.getElementById("panel7").style.borderRightStyle = "solid";
+		 document.getElementById("panel7").style.borderRightWidth = "3px";
+=======
 		document.getElementById("panelWrapper").style.width = "696px";
+>>>>>>> refs/remotes/origin/master
 		allPanelSizeX = '672'
         break;
 	case '8':
+		panelMarginLeft = "400"
 		vanishPanels();
 		increaseSize('8');
+<<<<<<< HEAD
+		document.getElementById("panel1").style.marginLeft = panelMarginLeft + "px";
+=======
+>>>>>>> refs/remotes/origin/master
 		document.getElementById("panel1").style.display = "inline-block";
         document.getElementById("panel2").style.display = "inline-block";
         document.getElementById("panel3").style.display = "inline-block";
@@ -87,6 +165,17 @@
         document.getElementById("panel6").style.display = "inline-block";
         document.getElementById("panel7").style.display = "inline-block";
         document.getElementById("panel8").style.display = "inline-block";
+<<<<<<< HEAD
+		 document.getElementById("panel8").style.borderRightStyle = "solid";
+		 document.getElementById("panel8").style.borderRightWidth = "3px";
+		allPanelSizeX = '768'
+        break;
+	case '9':
+		panelMarginLeft = "370"
+		vanishPanels();
+		increaseSize('9');
+		document.getElementById("panel1").style.marginLeft = panelMarginLeft + "px";
+=======
 		document.getElementById("panelWrapper").style.width = "796px";
 		allPanelSizeX = '768'
         break;
@@ -94,6 +183,7 @@
 	
 		vanishPanels();
 		increaseSize('9');
+>>>>>>> refs/remotes/origin/master
 		document.getElementById("panel1").style.display = "inline-block";
         document.getElementById("panel2").style.display = "inline-block";
         document.getElementById("panel3").style.display = "inline-block";
@@ -103,12 +193,22 @@
         document.getElementById("panel7").style.display = "inline-block";
         document.getElementById("panel8").style.display = "inline-block";
         document.getElementById("panel9").style.display = "inline-block";
+<<<<<<< HEAD
+		 document.getElementById("panel9").style.borderRightStyle = "solid";
+		 document.getElementById("panel9").style.borderRightWidth = "3px";
+=======
 		document.getElementById("panelWrapper").style.width = "896px";
+>>>>>>> refs/remotes/origin/master
 		allPanelSizeX = '864'
         break;
 	case '10':
+		panelMarginLeft = "340"
 		vanishPanels();
 		increaseSize('10');
+<<<<<<< HEAD
+		document.getElementById("panel1").style.marginLeft = panelMarginLeft + "px";
+=======
+>>>>>>> refs/remotes/origin/master
 		document.getElementById("panel1").style.display = "inline-block";
         document.getElementById("panel2").style.display = "inline-block";
         document.getElementById("panel3").style.display = "inline-block";
@@ -119,7 +219,12 @@
         document.getElementById("panel8").style.display = "inline-block";
         document.getElementById("panel9").style.display = "inline-block";
         document.getElementById("panel10").style.display = "inline-block";
+<<<<<<< HEAD
+		 document.getElementById("panel10").style.borderRightStyle = "solid";
+		 document.getElementById("panel10").style.borderRightWidth = "3px";
+=======
 		document.getElementById("panelWrapper").style.width = "996px";
+>>>>>>> refs/remotes/origin/master
 		allPanelSizeX = '960'
         break;
     default:
@@ -150,6 +255,21 @@
 		var panel9 = document.getElementById("panel9").style;
 		var panel10 = document.getElementById("panel10").style;
 
+<<<<<<< HEAD
+		
+	    panel1.borderRight = "none";
+		panel2.borderRight = "none";
+		panel3.borderRight = "none";
+		panel4.borderRight = "none";
+		panel5.borderRight = "none";
+		panel6.borderRight = "none";
+		panel7.borderRight = "none";
+		panel8.borderRight = "none";
+		panel9.borderRight = "none";
+		panel10.borderRight = "none";
+		
+=======
+>>>>>>> refs/remotes/origin/master
 		 
 		
 		if(p>=1){

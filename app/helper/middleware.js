@@ -4,7 +4,7 @@ var qs = require("querystring");
 var router = require("./router");
 var loginfile = require("../controller/login");
 var login = new loginfile.Login;
-
+var save = require("../controller/save");
 
 
 function logger(req,res) {
@@ -113,9 +113,14 @@ function routing(req, res) {
                    
                 },
                 POST: {
-                 '/principal':function(req,res){
+                    '/principal':function(req,res){
 			login.checkData(req,res);
-		 }
+		 },
+		    '/save':function(req,res){
+			
+			//console.log(workspace.scale);
+			save.storeData(req,res);
+		    }
 		},
                 PUT: {
                    
