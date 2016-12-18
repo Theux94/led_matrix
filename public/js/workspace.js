@@ -3,7 +3,11 @@
 
     
 workspace = {
+<<<<<<< HEAD
     "scale":1,
+=======
+    "scale":3,
+>>>>>>> refs/remotes/origin/master
     "height":96,
     "width":96,
     "image":{
@@ -25,6 +29,7 @@ function positionimage(event, elem){
     var y = event.clientY;     // Get the vertical coordinate
     xe = x - elem.offsetLeft;
     ye = y - elem.offsetTop;
+<<<<<<< HEAD
     xx = Math.round(xe/workspace.scale);
     yy = Math.round(ye/workspace.scale);
     console.log("Coordinates: "+xx+"/"+yy);
@@ -32,6 +37,18 @@ function positionimage(event, elem){
 }
 
 
+=======
+    xx = Math.floor(xe/workspace.scale);
+    yy = Math.floor(ye/workspace.scale);
+	if(xx>320) xx=320;
+	if(yy==33) yy=32;
+    console.log("CoordinatesFinal: "+xx+"/"+yy);
+}
+
+
+
+
+>>>>>>> refs/remotes/origin/master
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
