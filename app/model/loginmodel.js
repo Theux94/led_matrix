@@ -36,7 +36,7 @@ function checkconnection(user){
 			console.log(user+" allready connected");
 		}
 		else{
-			db.all('UPDATE USERS SET CONNECTED="true" where USER = ?',user, function(err, rows){
+			db.run('UPDATE USERS SET CONNECTED="true" where USER = ?',user, function(err, rows){
 				if (err) 
 	    			console.log(err);
 				else
@@ -48,6 +48,17 @@ function checkconnection(user){
 	});	
 	return access;	    
 }
+function logout(user){
+    db.run('UPDATE USERS SET CONNECTED="false" where USER = ?',user, function(err, rows){
+	if (err) 
+	    console.log(err);
+	else
+	    console.log("Now "+user+" is disconnected"); 
+	access = true;
+    });
+}
+
+
 module.exports.checklogin = checklogin;
 module.exports.checkconnection = checkconnection;
-
+module.exports.logout = logout;

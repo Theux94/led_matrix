@@ -49,7 +49,9 @@ class ITMApp {
 			var access = lm.checkconnection(user_connected);
 		});
 		connection.on('close', function(description){
-			console.log('Connection closed by '+user_connected);
+		    console.log('Connection closed by '+user_connected);
+		    lm.logout(user_connected);
+		    
 		});
 		
 	});	

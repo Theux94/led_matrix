@@ -8,21 +8,21 @@
 
 <body>
 
-<form id=registrationForm>
+<form  action="/secure_registration" method="post" >
 	
 	
-	<input id="fname" type="text" value="First Name" onClick="removeValue('fname')" onBlur="addValue('fname')" style="margin-left:140px;margin-top:50px;"></input>
-	<input id="lname" type="text" value="Last Name" onClick="removeValue('lname')" onBlur="addValue('lname')" style="margin-left: 35px;"></input>
+	<input id="fname" name="fname" type="text" value="" placeholder="First Name" onClick="removeValue('fname')" onBlur="addValue('fname')" style="margin-left:140px;margin-top:50px;"></input>
+	<input id="lname" name="lname" type="text" value="" placeholder="Last Name" onClick="removeValue('lname')" onBlur="addValue('lname')" style="margin-left: 35px;"></input>
 	
-	<div><input id="username" type="text" value="Username" onClick="removeValue('username')" onBlur="addValue('username')" style="margin-left:140px;margin-top:30px;"></input></div>
+	<div><input id="username" name="username" type="text" value="" placeholder="Username" onClick="removeValue('username')" onBlur="addValue('username')" style="margin-left:140px;margin-top:30px;"></input></div>
 	<div style="margin-top:40px;margin-left:140px;">	
-	<input id=password type="text" value="Password" onClick="CHtypePassword()" onBlur="giveValueBack()"></input>
-	<input id=passwordR type="text" value="Repeat Password" onClick="CHtypePasswordR()" onBlur="giveValueBackR()" style="margin-left: 35px;"></input>
+	<input id=password name="password" type="text" value="" placeholder="Password" onClick="CHtypePassword()" onBlur="giveValueBack()"></input>
+	<input id=passwordR name="passwordR" type="text" value="" placeholder="Repeat Password" onClick="CHtypePasswordR()" onBlur="giveValueBackR()" style="margin-left: 35px;"></input>
 	</div>
-<div><input id="email" type="email" value="E-Mail" onClick="removeValue('email')" onBlur="addValue('email')" style="margin-top:40px;margin-left:140px;"></input></div>
+<div><input id="email" name="email" type="email" value="" placeholder="E-Mail" onClick="removeValue('email')" onBlur="addValue('email')" style="margin-top:40px;margin-left:140px;"></input></div>
 	
-<div><input id="newsLetter" type="checkbox" value="Newsletter">Newsletter</input></div>
-<button id="registerButton" type="submit"><p>Register</p></button>
+<div><input id="newsLetter" name="newsLetter" type="checkbox" value="Newsletter">Newsletter</input></div>
+<button id="registerButton" name="registerButton" type="submit"><p>Register</p></button>
 </form>
 
 	<script>
