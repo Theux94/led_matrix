@@ -3,10 +3,11 @@ var fs = require("fs");
 var file = "./app/model/DB_users.db";
 var exists = fs.existsSync(file);
 var db = new sqlite3.Database(file);
-var existsBool;
+
 
 function checkregister(req,res,email,user,password,logedIn){
 
+	
 	db.all("SELECT * from users WHERE email=?",email, function(err, rows){
 		console.log("rows!!!:"+rows);
 			if (typeof rows[0] != 'undefined'){
@@ -16,7 +17,7 @@ function checkregister(req,res,email,user,password,logedIn){
 				existsBool=false;
 				console.log("existboolsTRUE?"+existsBool)
 			}
-		});
+	
 	console.log("WICHTIGG?"+existsBool)
 	
 	
@@ -32,7 +33,7 @@ function checkregister(req,res,email,user,password,logedIn){
 			}
 		});
 	
-	
+		console.log("exists???before"+existsBool);
 	if (existsBool!=true){
 		console.log("exists???"+existsBool);
     db.run("INSERT INTO users VALUES (?,?,?,?)",email,user,password,logedIn,  function(err, rows3){
@@ -48,6 +49,7 @@ function checkregister(req,res,email,user,password,logedIn){
 		res.setHeader('Content-Type','text/html')
 		res.end("<p>Your E-Mail or User does already exists</p>");
 	}
+			});
 }
 /*
 function checkRegister(req,res,email,user,password,logedIn){
