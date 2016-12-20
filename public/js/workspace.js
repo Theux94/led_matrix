@@ -3,11 +3,7 @@
 
     
 workspace = {
-<<<<<<< HEAD
-    "scale":1,
-=======
     "scale":3,
->>>>>>> refs/remotes/origin/master
     "height":96,
     "width":96,
     "image":{
@@ -27,17 +23,8 @@ function set_workspace(scale){
 function positionimage(event, elem){
     var x = event.clientX;     // Get the horizontal coordinate
     var y = event.clientY;     // Get the vertical coordinate
-    xe = x - elem.offsetLeft;
+    xe = x - panelMarginLeft;
     ye = y - elem.offsetTop;
-<<<<<<< HEAD
-    xx = Math.round(xe/workspace.scale);
-    yy = Math.round(ye/workspace.scale);
-    console.log("Coordinates: "+xx+"/"+yy);
-    
-}
-
-
-=======
     xx = Math.floor(xe/workspace.scale);
     yy = Math.floor(ye/workspace.scale);
 	if(xx>320) xx=320;
@@ -46,15 +33,14 @@ function positionimage(event, elem){
 }
 
 
-
-
->>>>>>> refs/remotes/origin/master
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-        reader.onload = function (e) {
+	var fileToLoad = input.files[0];
+        reader.onload = function (fileToLoad) {
+	    workspace.image.src  = fileToLoad.target.result;
 	    var image = new Image();
-	    image.src = e.target.result;
+	    image.src = fileToLoad.target.result;
 	    image.onload = function() {
 		var width = this.width;
 		var height = this.height;
@@ -73,14 +59,11 @@ function readURL(input) {
 		d.style.left = 0+'px';
 		d.style.top = 0+'px';
 		$('#movingImage')
-                    .attr('src', e.target.result)
+                    .attr('src', fileToLoad.target.result)
                     .width(img_width)
                     .height(img_height);
 	    }
         };
-	reader.onloadend = function () {
-	    workspace.image.src  = reader.result;
-	}
         reader.readAsDataURL(input.files[0]);
     }
 }

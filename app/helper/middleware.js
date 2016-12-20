@@ -4,6 +4,8 @@ var qs = require("querystring");
 var router = require("./router");
 var loginfile = require("../controller/login");
 var login = new loginfile.Login;
+var registerfile = require("../controller/register");
+var register = new registerfile.Register;
 var save = require("../controller/save");
 
 
@@ -104,23 +106,29 @@ function routing(req, res) {
 
             var routes = {
                 GET: {
-		   '/principal':function(req,res){
-		       readingcookie(req, res);
-		       publicfolder(req,res);
-		    }
+		            '/principal':function(req,res){
+		                readingcookie(req, res);
+		                publicfolder(req,res);
+		            },
+                    '/secure':function(req,res){
+                        req.url = "/public/register.html"
+		                publicfolder(req,res);                        
+                    }
 		  },
                 DELETE: {
                    
                 },
                 POST: {
                     '/principal':function(req,res){
-			login.checkData(req,res);
-		 },
-		    '/save':function(req,res){
-			
-			//console.log(workspace.scale);
-			save.storeData(req,res);
-		    }
+			            login.checkData(req,res);
+		            },
+		            '/save':function(req,res){
+			            //console.log(workspace.scale);
+			            save.storeData(req,res);
+		            },
+                    '/secure_registration':function(req,res){
+                        register.checkData(req,res);
+                    }
 		},
                 PUT: {
                    

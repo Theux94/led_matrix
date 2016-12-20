@@ -16,14 +16,9 @@ h1 {
 .panels {
 	width: 0px;
 	height: 0px;
-<<<<<<< HEAD
+
 	margin-top: 10%;
-	border-top-width: 3px;
-	border-top-style: solid;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-=======
->>>>>>> refs/remotes/origin/master
+
 	display: none;
 	
 }
@@ -33,16 +28,14 @@ h1 {
 
 }
 #panelWrapper{
-<<<<<<< HEAD
     position: static;
     height:100px;
     width:1500px;
-=======
 	margin: 0 auto;
 	margin-top:20%;
     height: 96px;
 	width: 0px;
 	border-style: none;
 	border-width: 2px;
->>>>>>> refs/remotes/origin/master
+
 }

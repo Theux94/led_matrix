@@ -2,82 +2,26 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/registerStyle.css" rel="stylesheet" type="text/css">
 <title>Registrierung</title>
 </head>
 
 <body>
 
-<form id=registrationForm>
+<form  action="/secure_registration" method="post" >
 	
+	<div><input id="username" name="username" type="text" value="" placeholder="Username" onClick="removeValue('username')" onBlur="addValue('username')" style="margin-left:140px;margin-top:30px;"></input></div>
 	
-	<input id="fname" type="text" value="First Name" onClick="removeValue('fname')" onBlur="addValue('fname')" style="margin-left:140px;margin-top:50px;"></input>
-	<input id="lname" type="text" value="Last Name" onClick="removeValue('lname')" onBlur="addValue('lname')" style="margin-left: 35px;"></input>
-	
-	<div><input id="username" type="text" value="Username" onClick="removeValue('username')" onBlur="addValue('username')" style="margin-left:140px;margin-top:30px;"></input></div>
 	<div style="margin-top:40px;margin-left:140px;">	
-	<input id=password type="text" value="Password" onClick="CHtypePassword()" onBlur="giveValueBack()"></input>
-	<input id=passwordR type="text" value="Repeat Password" onClick="CHtypePasswordR()" onBlur="giveValueBackR()" style="margin-left: 35px;"></input>
+	<input id=password name="password" type="password" value="" placeholder="Password" ></input>
+	<input id=passwordR name="passwordR" type="password" value="" placeholder="Repeat Password" style="margin-left: 35px;"></input>
 	</div>
-<div><input id="email" type="email" value="E-Mail" onClick="removeValue('email')" onBlur="addValue('email')" style="margin-top:40px;margin-left:140px;"></input></div>
 	
-<div><input id="newsLetter" type="checkbox" value="Newsletter">Newsletter</input></div>
-<button id="registerButton" type="submit"><p>Register</p></button>
+<div><input id="email" name="email" type="email" value="" placeholder="E-Mail" onClick="removeValue('email')" onBlur="addValue('email')" style="margin-top:40px;margin-left:140px;"></input></div>
+	
+<div><input id="newsLetter" name="newsLetter" type="checkbox" value="Newsletter">Newsletter</input></div>
+<button id="registerButton" name="registerButton" type="submit"><p>Register</p></button>
 </form>
 
-	<script>
-							function CHtypePassword(obj) {
-  								
-								var obj = document.getElementById('password');
-  								if (obj.type != "password") obj.type = "password";
-								if (obj.value == "Password") obj.value = "";
-							} 	
-						    function CHtypePasswordR(obj) {
-  								
-								var obj = document.getElementById('passwordR');
-  								if (obj.type != "password") obj.type = "password";
-								if (obj.value == "Repeat Password") obj.value = "";
-							} 
-							function giveValueBack(obj){
-								var obj = document.getElementById('password');
-								if (obj.value == ""){
-									obj.type = "text";
-									obj.value = "Password"}
-								}
-							function giveValueBackR(obj){
-								var obj = document.getElementById('passwordR');
-								if (obj.value == ""){
-									obj.type = "text";
-									obj.value = "Repeat Password"}
-								}
-							
-							
-							
-							function removeValue(field) {
-								var obj1 = document.getElementById('email');
-								var obj2 = document.getElementById('username');
-								var obj3 = document.getElementById('fname');
-								var obj4 = document.getElementById('lname');
-								
-								if (obj1.value == "E-Mail" && field=='email') obj1.value = "";
-								if (obj2.value == "Username" && field=='username') obj2.value = "";
-								if (obj3.value == "First Name" && field=='fname') obj3.value = "";
-								if (obj4.value == "Last Name" && field=='lname') obj4.value = "";
-							}
-		
-		
-							function addValue(field) {
-								var obj1 = document.getElementById('email');
-								var obj2 = document.getElementById('username');
-								var obj3 = document.getElementById('fname');
-								var obj4 = document.getElementById('lname');
-								
-								if (obj1.value == "" && field=='email') obj1.value = "E-Mail";
-								if (obj2.value == "" && field=='username') obj2.value = "Username";
-								if (obj3.value == "" && field=='fname') obj3.value = "First Name";
-								if (obj4.value == "" && field=='lname') obj4.value = "Last Name";
-							}
-						
-						</script>
 </body>
 </html> 
