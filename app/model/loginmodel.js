@@ -7,54 +7,62 @@ var db = new sqlite3.Database(file);
 
 function checklogin(req,res,user,passw){
     db.all("SELECT * FROM users where user = ?", user,  function(err, rows){
-	if (err) 
+	if (err)
 	    console.log(err);
-	else{ 
+	else{
 	    if (rows[0].PASSWORD != passw){
 		res.setHeader('Content-Type','text/html')
 		res.end("<p>WRONG PASSWORD OR USER</p>");
 	    }
-	    else{ 
+	    else{
 		res.writeHead(301,
 			      {Location: 'http://127.0.0.1:1337/principal',
 			       'Set-Cookie': 'sesioncookie='+ user}
 );
 		res.end();
-		
+
 	    }
-	    
+
 	}
     });
 }
 function checkconnection(user){
-	var access = false;
-	db.all("SELECT CONNECTED FROM users where user = ?", user,  function(err, rows){
-	if (err) 
-	    console.log(err);
-	else{ 
-		if (rows[0].CONNECTED == "true"){
-			console.log(user+" allready connected");
+	return new Promise(function(resolve, reject) {
+		db.all("SELECT CONNECTED FROM users where user = ?", user,  function(err, rows){
+		if (err){
+			console.log(err);
+			reject(err);
 		}
 		else{
-			db.run('UPDATE USERS SET CONNECTED="true" where USER = ?',user, function(err, rows){
-				if (err) 
-	    			console.log(err);
-				else
-					console.log("Now "+user+" is connected"); 
-					access = true;
-				});
+				
+			if (rows[0].CONNECTED == "true"){
+				console.log(user+" allready connected");
+				resolve(false);
 			}
-		}
-	});	
-	return access;	    
+			else{
+				db.run('UPDATE USERS SET CONNECTED="true" where USER = ?',user, function(err, rows){
+					if (err){
+						console.log(err);
+						reject(err);
+					}
+					else{
+						console.log("Now "+user+" is connected");
+						resolve(true);
+					}
+						
+					});
+				}
+			}
+		});
+	});
+					
 }
 function logout(user){
     db.run('UPDATE USERS SET CONNECTED="false" where USER = ?',user, function(err, rows){
-	if (err) 
+	if (err)
 	    console.log(err);
 	else
-	    console.log("Now "+user+" is disconnected"); 
-	access = true;
+	    console.log("Now "+user+" is disconnected");
     });
 }
 

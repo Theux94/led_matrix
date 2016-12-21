@@ -33,30 +33,54 @@ class ITMApp {
 		res.end('try again');
 		console.log('Error ' + err);
 	    })
-		
+
 		}).listen("1337");
 	console.log("startUp is called: http://127.0.0.1:1337/public");
-	var user_connected = null;
-	var WebSocketServer = require('websocket').server; 
-	var wsServer = new WebSocketServer({     
+	var connections = [];
+	var WebSocketServer = require('websocket').server;
+	var wsServer = new WebSocketServer({
 		httpServer: server });
     wsServer.on('request', function(r){
 		console.log("Socket: "+ r.origin);
 		var connection = r.accept('access', r.origin);
 		connection.on("message",function(user){
-			user_connected = user.utf8Data;
-			console.log("User "+ user.utf8Data +" is trying to connect");			
-			var access = lm.checkconnection(user_connected);
+			console.log("User "+ user.utf8Data +" is trying to connect");
+			for (var i = 0; i < connections.length; i++) {
+				if (connections[i][0] == connection){
+					lm.logout(connections[i][1]);
+					connections.splice(i,i+1);
+					break;
+				}
+				else console.log("connection not done before "+connection+' '+connections[i][0]);
+			}
+			var access = lm.checkconnection(user.utf8Data).then(
+				function(access){
+					if(access) connections.push([connection, user.utf8Data])
+					else connections.push([connection,null])
+				}
+
+			);
+								
+			
 		});
 		connection.on('close', function(description){
-		    console.log('Connection closed by '+user_connected);
-		    lm.logout(user_connected);
-		    
+			for (var i = 0; i < connections.length; i++) {
+				if (connections[i][0] == connection){
+					if(connections[i][1]!=null){
+						console.log('Connection closed by '+connections[i][1]);
+						lm.logout(connections[i][1]);
+						connections.splice(i,i+1);
+						break;
+					}
+					else console.log("THIS ONE SHOULD BE NOT CONNECTED");
+
+				}
+			}
 		});
-		
-	});	
-			
-}	
+
+	});
+
+}
 }
 
 module.exports.ITMApp = ITMApp
