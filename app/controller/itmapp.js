@@ -51,12 +51,17 @@ class ITMApp {
 					connections.splice(i,i+1);
 					break;
 				}
-				else console.log("connection not done before "+connection+' '+connections[i][0]);
 			}
 			var access = lm.checkconnection(user.utf8Data).then(
 				function(access){
-					if(access) connections.push([connection, user.utf8Data])
-					else connections.push([connection,null])
+					if(access) {
+						connections.push([connection, user.utf8Data]);
+						//connection.sendUTF("Wellcome "+ user.utf8Data);
+					}
+					else {
+						connections.push([connection,null]);
+						connection.sendUTF("User "+user.utf8Data+" is alreday connected");
+					}
 				}
 
 			);
@@ -67,7 +72,7 @@ class ITMApp {
 			for (var i = 0; i < connections.length; i++) {
 				if (connections[i][0] == connection){
 					if(connections[i][1]!=null){
-						console.log('Connection closed by '+connections[i][1]);
+						//console.log('Connection closed by '+connections[i][1]);
 						lm.logout(connections[i][1]);
 						connections.splice(i,i+1);
 						break;

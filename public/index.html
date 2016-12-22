@@ -26,12 +26,17 @@
     }
     return null;
 }
+    //Web Sockets
     var user = readCookie('sesioncookie');
     var ws = new WebSocket('ws://127.0.0.1:1337/principal','access');
-    //ws.send(user.toString());
     ws.onopen = function(){
       console.log(user);
       ws.send(user);          
+    }
+    ws.onmessage = function(message){
+      var received_msg = message.data; 			        
+      alert(received_msg);
+      window.location = 'http://127.0.0.1:1337/public';
     }
 </script>
 
