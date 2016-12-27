@@ -6,7 +6,7 @@ function store_peticion(){
     ajaxObj = new XMLHttpRequest();
     ajaxObj.open("POST", "/save", true);
     ajaxObj.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    ajaxObj.send('workspace='+JSON.stringify({img_src: workspace.image.src,
+    ajaxObj.send(JSON.stringify({img_src: workspace.image.src,
 				 scale: workspace.scale, 
 				 img_height: workspace.image.height,
 				 img_width: workspace.image.width,

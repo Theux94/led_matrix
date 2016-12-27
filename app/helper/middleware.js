@@ -45,6 +45,7 @@ function readingcookie(req, res) {
 	});
 }
 
+
 function readingdata(req, res) {
     return new Promise(
         function(resolve, reject) {
@@ -57,7 +58,8 @@ function readingdata(req, res) {
                 var body="";//JSON.stringify(params);
                 req.on('data', (data) => body +=data)
                 req.on('end', function() {
-                    var postParams = qs.parse(body)
+                    //console.log(body);
+                    var postParams = JSON.parse(body);
                     console.log(postParams);
                     req.post = postParams;
                     resolve("READINGDATA");
