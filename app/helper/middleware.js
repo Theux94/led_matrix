@@ -59,7 +59,12 @@ function readingdata(req, res) {
                 req.on('data', (data) => body +=data)
                 req.on('end', function() {
                     //console.log(body);
-                    var postParams = JSON.parse(body);
+                    try{
+                        var postParams = JSON.parse(body);                    
+                    }
+                    catch(err){
+                        var postParams = qs.parse(body);          
+                    }
                     console.log(postParams);
                     req.post = postParams;
                     resolve("READINGDATA");
