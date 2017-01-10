@@ -7,11 +7,13 @@ function store_peticion(){
     ajaxObj.open("POST", "/save", true);
     ajaxObj.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     ajaxObj.send(JSON.stringify({img_src: workspace.image.src,
-				 scale: workspace.scale, 
 				 img_height: workspace.image.height,
 				 img_width: workspace.image.width,
 				 img_x: workspace.image.x,
 				 img_y: workspace.image.y,
+				 scale: workspace.scale, 
+                 height: workspace.height,
+                width: workspace.width,              
 				}));
 }
 

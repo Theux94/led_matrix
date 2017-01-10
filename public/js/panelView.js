@@ -3,24 +3,25 @@ function showMatrix(nr){
 	var allPanelSizeX;
 
 	document.getElementById("panelWrapper").style.borderStyle = "dotted";
-
+	document.getElementById("panelWrapper").style.width = "96px";
 		switch(nr) {
     case '1':
 		panelMarginLeft = "65";
 		vanishPanels();
-		increaseSize('1');
-        document.getElementById("panel1").style.display = "inline-block";	
-		document.getElementById("panelWrapper").style.width = "96px";
-		document.getElementById("panelWrapper").style.height = "100px";
+		//increaseSize('1');
+        //document.getElementById("panel1").style.display = "inline-block";		
+		document.getElementById("panelWrapper").style.height = "96px";
+		set_workspace(1);
 		allPanelSizeX = '96'
         break;
     case '2':
 		panelMarginLeft = "630"
 		vanishPanels();
 		increaseSize('2');
-		document.getElementById("panel1").style.display = "inline-block";
-        document.getElementById("panel2").style.display = "inline-block";
-		document.getElementById("panelWrapper").style.width = "196px";
+		//document.getElementById("panel1").style.display = "inline-block";
+        //document.getElementById("panel2").style.display = "inline-block";
+		document.getElementById("panelWrapper").style.width = "192px";
+		set_workspace(2);
 		allPanelSizeX = '192'
         break;
 				
@@ -28,92 +29,97 @@ function showMatrix(nr){
 		panelMarginLeft = "610"
 		vanishPanels();
 		increaseSize('3');
-        document.getElementById("panel1").style.display = "inline-block";
-        document.getElementById("panel2").style.display = "inline-block";
-        document.getElementById("panel3").style.display = "inline-block";
-		document.getElementById("panelWrapper").style.width = "296px";
-
+        //document.getElementById("panel1").style.display = "inline-block";
+        //document.getElementById("panel2").style.display = "inline-block";
+        //document.getElementById("panel3").style.display = "inline-block";
+		document.getElementById("panelWrapper").style.width = "288px";
+		set_workspace(3);
 		allPanelSizeX = '288'
         break;
 	case '4':
 		panelMarginLeft = "560"
 		vanishPanels();
 		increaseSize('4');
-		document.getElementById("panel1").style.display = "inline-block";
-        document.getElementById("panel2").style.display = "inline-block";
-        document.getElementById("panel3").style.display = "inline-block";
-        document.getElementById("panel4").style.display = "inline-block";
-		document.getElementById("panelWrapper").style.width = "396px";
+		//document.getElementById("panel1").style.display = "inline-block";
+        //document.getElementById("panel2").style.display = "inline-block";
+        //document.getElementById("panel3").style.display = "inline-block";
+        //document.getElementById("panel4").style.display = "inline-block";
+		document.getElementById("panelWrapper").style.width = "384px";
+		set_workspace(4);
 		allPanelSizeX = '384'
         break;
 	case '5':
 		panelMarginLeft = "500"
 		vanishPanels();
 		increaseSize('5');
-		document.getElementById("panel1").style.display = "inline-block";
-        document.getElementById("panel2").style.display = "inline-block";
-        document.getElementById("panel3").style.display = "inline-block";
-        document.getElementById("panel4").style.display = "inline-block";
-        document.getElementById("panel5").style.display = "inline-block";
-		document.getElementById("panelWrapper").style.width = "496px";
+		//document.getElementById("panel1").style.display = "inline-block";
+        //document.getElementById("panel2").style.display = "inline-block";
+        //document.getElementById("panel3").style.display = "inline-block";
+        //document.getElementById("panel4").style.display = "inline-block";
+        //document.getElementById("panel5").style.display = "inline-block";
+		document.getElementById("panelWrapper").style.width = "480px";
+		set_workspace(5);
 		allPanelSizeX = '480'
         break;
 	case '6':
 		panelMarginLeft = "470"
 		vanishPanels();
 		increaseSize('6');
-		document.getElementById("panel1").style.display = "inline-block";
-        document.getElementById("panel2").style.display = "inline-block";
-        document.getElementById("panel3").style.display = "inline-block";
-        document.getElementById("panel4").style.display = "inline-block";
-        document.getElementById("panel5").style.display = "inline-block";
-        document.getElementById("panel6").style.display = "inline-block";
-		document.getElementById("panelWrapper").style.width = "596px";
+		//document.getElementById("panel1").style.display = "inline-block";
+        //document.getElementById("panel2").style.display = "inline-block";
+        //document.getElementById("panel3").style.display = "inline-block";
+        //document.getElementById("panel4").style.display = "inline-block";
+        //document.getElementById("panel5").style.display = "inline-block";
+        //document.getElementById("panel6").style.display = "inline-block";
+		document.getElementById("panelWrapper").style.width = "576px";
+		set_workspace(6);
 		allPanelSizeX = '576'
         break;
 	case '7':
 		panelMarginLeft = "430"
 		vanishPanels();
 		increaseSize('7');
-		document.getElementById("panel1").style.display = "inline-block";
-        document.getElementById("panel2").style.display = "inline-block";
-        document.getElementById("panel3").style.display = "inline-block";
-        document.getElementById("panel4").style.display = "inline-block";
-        document.getElementById("panel5").style.display = "inline-block";
-        document.getElementById("panel6").style.display = "inline-block";
-        document.getElementById("panel7").style.display = "inline-block";
-		document.getElementById("panelWrapper").style.width = "696px";
+		//document.getElementById("panel1").style.display = "inline-block";
+        //document.getElementById("panel2").style.display = "inline-block";
+        //document.getElementById("panel3").style.display = "inline-block";
+        //document.getElementById("panel4").style.display = "inline-block";
+        //document.getElementById("panel5").style.display = "inline-block";
+        //document.getElementById("panel6").style.display = "inline-block";
+        //document.getElementById("panel7").style.display = "inline-block";
+		document.getElementById("panelWrapper").style.width = "672px";
+		set_workspace(7);
 		allPanelSizeX = '672'
         break;
 	case '8':
 		panelMarginLeft = "400"
 		vanishPanels();
 		increaseSize('8');
-		document.getElementById("panel1").style.display = "inline-block";
-        document.getElementById("panel2").style.display = "inline-block";
-        document.getElementById("panel3").style.display = "inline-block";
-        document.getElementById("panel4").style.display = "inline-block";
-        document.getElementById("panel5").style.display = "inline-block";
-        document.getElementById("panel6").style.display = "inline-block";
-        document.getElementById("panel7").style.display = "inline-block";
-        document.getElementById("panel8").style.display = "inline-block";
-		document.getElementById("panelWrapper").style.width = "796px";
+		//document.getElementById("panel1").style.display = "inline-block";
+        //document.getElementById("panel2").style.display = "inline-block";
+        //document.getElementById("panel3").style.display = "inline-block";
+        //document.getElementById("panel4").style.display = "inline-block";
+        //document.getElementById("panel5").style.display = "inline-block";
+        //document.getElementById("panel6").style.display = "inline-block";
+        //document.getElementById("panel7").style.display = "inline-block";
+        //document.getElementById("panel8").style.display = "inline-block";
+		document.getElementById("panelWrapper").style.width = "768px";
+		set_workspace(8);
 		allPanelSizeX = '768'
         break;
 	case '9':
 		vanishPanels();
 		increaseSize('9');
-		document.getElementById("panel1").style.display = "inline-block";
-        document.getElementById("panel2").style.display = "inline-block";
-        document.getElementById("panel3").style.display = "inline-block";
-        document.getElementById("panel4").style.display = "inline-block";
-        document.getElementById("panel5").style.display = "inline-block";
-        document.getElementById("panel6").style.display = "inline-block";
-        document.getElementById("panel7").style.display = "inline-block";
-        document.getElementById("panel8").style.display = "inline-block";
-        document.getElementById("panel9").style.display = "inline-block";
-		document.getElementById("panelWrapper").style.width = "896px";
-
+		//document.getElementById("panel1").style.display = "inline-block";
+        //document.getElementById("panel2").style.display = "inline-block";
+        //document.getElementById("panel3").style.display = "inline-block";
+        //document.getElementById("panel4").style.display = "inline-block";
+        //document.getElementById("panel5").style.display = "inline-block";
+        //document.getElementById("panel6").style.display = "inline-block";
+        //document.getElementById("panel7").style.display = "inline-block";
+        //document.getElementById("panel8").style.display = "inline-block";
+        //document.getElementById("panel9").style.display = "inline-block";
+		document.getElementById("panelWrapper").style.width = "864px";
+		set_workspace(9);
 		allPanelSizeX = '864'
         break;
 	case '10':
@@ -121,17 +127,18 @@ function showMatrix(nr){
 		vanishPanels();
 		increaseSize('10');
 
-		document.getElementById("panel1").style.display = "inline-block";
-        document.getElementById("panel2").style.display = "inline-block";
-        document.getElementById("panel3").style.display = "inline-block";
-        document.getElementById("panel4").style.display = "inline-block";
-        document.getElementById("panel5").style.display = "inline-block";
-        document.getElementById("panel6").style.display = "inline-block";
-        document.getElementById("panel7").style.display = "inline-block";
-        document.getElementById("panel8").style.display = "inline-block";
-        document.getElementById("panel9").style.display = "inline-block";
-        document.getElementById("panel10").style.display = "inline-block";
-		document.getElementById("panelWrapper").style.width = "996px";
+		//document.getElementById("panel1").style.display = "inline-block";
+        //document.getElementById("panel2").style.display = "inline-block";
+        //document.getElementById("panel3").style.display = "inline-block";
+        //document.getElementById("panel4").style.display = "inline-block";
+        //document.getElementById("panel5").style.display = "inline-block";
+        //document.getElementById("panel6").style.display = "inline-block";
+        //document.getElementById("panel7").style.display = "inline-block";
+        //document.getElementById("panel8").style.display = "inline-block";
+        //document.getElementById("panel9").style.display = "inline-block";
+        //document.getElementById("panel10").style.display = "inline-block";
+		document.getElementById("panelWrapper").style.width = "960px";
+		set_workspace(10);
 		allPanelSizeX = '960'
         break;
     default:

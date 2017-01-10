@@ -14,21 +14,20 @@ workspace = {
 
 // SETTERS OF THE GLOBAL OBJECT WORKSPACE
 
-function set_workspace(scale){
-    workspace.scale = scale;
-    workspace.width = scale*96;
+function set_workspace(panels){
+    workspace.width = panels*96;
 }
 
 // 
 function positionimage(event, elem){
     var x = event.clientX;     // Get the horizontal coordinate
     var y = event.clientY;     // Get the vertical coordinate
-    xe = x - panelMarginLeft;
+    xe = x - elem.offsetLeft;
     ye = y - elem.offsetTop;
     xx = Math.floor(xe/workspace.scale);
     yy = Math.floor(ye/workspace.scale);
-	if(xx>320) xx=320;
-	if(yy==33) yy=32;
+	workspace.image.x = xx;
+	workspace.image.y = yy;
     console.log("CoordinatesFinal: "+xx+"/"+yy);
 }
 
@@ -54,6 +53,8 @@ function readURL(input) {
 		    var img_width = width;
 		    var img_height = height;
 		}
+		workspace.image.width = img_width;
+		workspace.image.height = img_height;
 		var d = document.getElementById('imageMove');
 		d.style.position = "absolute";
 		d.style.left = 0+'px';
