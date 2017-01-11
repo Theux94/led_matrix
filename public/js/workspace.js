@@ -22,16 +22,18 @@ function set_workspace(panels){
 function positionimage(event, elem){
     var x = event.clientX;     // Get the horizontal coordinate
     var y = event.clientY;     // Get the vertical coordinate
-    xe = x - elem.offsetLeft;
-    ye = y - elem.offsetTop;
+	img = document.getElementById("imageMove");
+	var x_i = img.offsetLeft;
+	var y_i = img.offsetTop;
+    xe = x_i - elem.offsetLeft;
+    ye = y_i - elem.offsetTop;
     xx = Math.floor(xe/workspace.scale);
     yy = Math.floor(ye/workspace.scale);
-	if ((xx>0) && (yy>0) && (yy<=32) && (xx<=workspace.width/workspace.scale)){
+	if ((xx>=0) && (yy>=0) && (yy<=32) && (xx<=workspace.width/workspace.scale)){
 		workspace.image.x = xx;
 		workspace.image.y = yy;
     	console.log("CoordinatesFinal: "+xx+"/"+yy);
 	}
-	
 }
 
 
