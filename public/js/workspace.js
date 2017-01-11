@@ -26,9 +26,12 @@ function positionimage(event, elem){
     ye = y - elem.offsetTop;
     xx = Math.floor(xe/workspace.scale);
     yy = Math.floor(ye/workspace.scale);
-	workspace.image.x = xx;
-	workspace.image.y = yy;
-    console.log("CoordinatesFinal: "+xx+"/"+yy);
+	if ((xx>0) && (yy>0) && (yy<=32) && (xx<=workspace.width/workspace.scale)){
+		workspace.image.x = xx;
+		workspace.image.y = yy;
+    	console.log("CoordinatesFinal: "+xx+"/"+yy);
+	}
+	
 }
 
 
@@ -56,9 +59,10 @@ function readURL(input) {
 		workspace.image.width = img_width;
 		workspace.image.height = img_height;
 		var d = document.getElementById('imageMove');
+		panel = document.getElementById("panelWrapper");
 		d.style.position = "absolute";
-		d.style.left = 0+'px';
-		d.style.top = 0+'px';
+		d.style.left = panel.offsetLeft+2+'px';
+		d.style.top = panel.offsetTop+2+'px';
 		$('#movingImage')
                     .attr('src', fileToLoad.target.result)
                     .width(img_width)
