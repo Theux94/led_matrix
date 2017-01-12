@@ -47,7 +47,12 @@
 </h1>
 
 
-<select name="panelnumber" align="left" style="margin-left: 20%">
+
+
+
+<section class="uploader" align="right" >
+
+<select name="panelnumber">
 	<option selected value="0"> Choose the number of panels </option>
  <div style="margin-left:40%;">
    <option value="1" onClick="showMatrix('1')">1</option>
@@ -63,13 +68,10 @@
  <div>
 </select>
 
-
-<section class="uploader" align="right" >
-
-<form style="margin-left: 500px; margin-top: -20px;">
+<form>
   <input type="file" id="files" onChange="readURL(this);" name="files[]" multiple />
   <output id="list"></output>
-  <input type="button" style="margin-left: 30px;" value="Display" onclick="store_peticion()">
+  <input type="button"  value="Display" onclick="store_peticion()">
 </form>
 
 <script type="application/javascript">
@@ -86,6 +88,11 @@
 </div>
 
 
+	</div>
+</select>
+</section>
+
+
 	<div id="panelWrapper">
 	  <div id="panel1" class="panels">  </div>
 	  <div id="panel2" class="panels">  </div>
@@ -98,8 +105,6 @@
 	  <div id="panel9" class="panels">  </div>
 	  <div id="panel10" class="panels">  </div>
 	</div>
-
-
 
 </body>
 </html>
