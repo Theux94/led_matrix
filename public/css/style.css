@@ -39,3 +39,8 @@ h1 {
 	border-width: 2px;
 
 }
+
+.uploader{
+	background-color: lightgray;
+    padding-left: 35%;
+}
