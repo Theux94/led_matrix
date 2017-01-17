@@ -120,7 +120,10 @@ function routing(req, res) {
                     '/secure':function(req,res){
                         req.url = "/public/register.html"
 		                publicfolder(req,res);                        
-                    }
+                    }, 
+                    '/logout' : function(req,res){
+			            login.logout(req,res);
+		            }
 		  },
                 DELETE: {
                    
