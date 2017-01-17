@@ -145,6 +145,7 @@ function showMatrix(nr){
         alert("Something went wrong!")
 } 
 	}
+	
 	function vanishPanels(){
 		document.getElementById("panel1").style.display = "none";
         document.getElementById("panel2").style.display = "none";
@@ -157,6 +158,7 @@ function showMatrix(nr){
         document.getElementById("panel9").style.display = "none";
         document.getElementById("panel10").style.display = "none";
 	}
+	
 	function increaseSize(p){
 		var panel1 = document.getElementById("panel1").style;
 		var panel2 = document.getElementById("panel2").style;

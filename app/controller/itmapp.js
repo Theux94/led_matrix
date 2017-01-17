@@ -36,6 +36,7 @@ class ITMApp {
 
 		}).listen("1337");
 	console.log("startUp is called: http://127.0.0.1:1337/public");
+	lm.restartConnections();
 	var connections = [];
 	var WebSocketServer = require('websocket').server;
 	var wsServer = new WebSocketServer({

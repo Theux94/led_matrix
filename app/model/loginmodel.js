@@ -65,8 +65,16 @@ function logout(user){
 	    console.log("Now "+user+" is disconnected");
     });
 }
-
+function restartConnections(){
+    db.run('update users set connected="false";', function(err, rows){
+	if (err)
+	    console.log(err);
+	else
+	    console.log("Restart the connections");
+    });
+}
 
 module.exports.checklogin = checklogin;
 module.exports.checkconnection = checkconnection;
 module.exports.logout = logout;
+module.exports.restartConnections = restartConnections;
