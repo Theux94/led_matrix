@@ -17,7 +17,6 @@ class Login{
 			       }
 );
 		res.end();
-        console.log("CACA!!!!!!!!!!!!")
     }
 }
 

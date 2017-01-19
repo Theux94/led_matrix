@@ -46,6 +46,8 @@ function readURL(input) {
 	    var image = new Image();
 	    image.src = fileToLoad.target.result;
 	    image.onload = function() {
+		this.width = this.width*3;
+		this.height = this.height*3;	
 		var width = this.width;
 		var height = this.height;
 		var scale = Math.floor(height/32);
