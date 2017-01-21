@@ -5,6 +5,9 @@ var PythonShell = require('python-shell');
 PythonShell.defaultOptions = {
         scriptPath: './app/python'
     };
+var sys = require('sys')
+var exec = require('child_process').exec;
+var child;
 
 function decodeBase64Image(dataString)
 {
@@ -33,6 +36,7 @@ function storeData(req,res){
     res.end();
     storeJSON(req.post.img_x,req.post.img_y,req.post.width);
     PyCall();
+    send_to_LED_Matrix();
 
 }
 
@@ -53,5 +57,14 @@ function storeJSON(img_x,img_y,img_width){
     });
 
  }
+function send_to_LED_Matrix(){
+    var cmd = "sshpass -p 'raspberry' scp app/model/img.gif pi@192.168.10.2:/home/pi";
+    child = exec(cmd, function (error, stdout, stderr) {
+            if (error !== null) {
+                console.log('exec error: ' + error);
+            }
+        });
+
+}
 
 module.exports.storeData = storeData;
